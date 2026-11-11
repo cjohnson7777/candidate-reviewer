@@ -6,34 +6,34 @@
 // =============================================================
 
 export const project = {
-  teamName: 'TODO: Team Name',
-  appName: 'Community Compass',
-  tagline: 'Find help nearby, in plain language.',
+  teamName: 'Me',
+  appName: 'Candidate Reviewer',
+  tagline: 'Find local politicians running and their policies.',
 
   // One or two sentences. Who is hurting, and how?
   problemStatement:
-    'TODO: Families in our neighborhood struggle to find free food, health, and youth programs because the information is scattered and hard to read.',
+    'Voters in Nashville struggle to find the policies of local politicians because the information is scattered and hard to find.',
 
   // One specific person. Give them a name, an age, and a situation.
-  targetUser: 'TODO: Maria, 34, a parent of two who works evenings and searches on her phone.',
+  targetUser: 'Jan, 18, newly able to vote but has no idea where who to vote for.',
 
-  community: 'TODO: Chicago, IL',
-  theme: 'TODO: Education Access / Global Health / Clean Water / Climate / Child Protection',
+  community: 'Nashville, TN',
+  theme: 'Education Access',
 
   // How you will know it works. Make it measurable.
-  successMeasure: 'TODO: A parent can find a matching resource in under 2 minutes.',
+  successMeasure: 'A voter can look at the app and find who is running and their policies in an easy to read format.',
 
   teamMembers: [
-    { name: 'TODO', role: 'Product owner (writes tickets)' },
-    { name: 'TODO', role: 'Front end (React)' },
-    { name: 'TODO', role: 'Back end (API + database)' },
-    { name: 'TODO', role: 'AI agent and skills' },
+    { name: 'Christina', role: 'Product owner (writes tickets)' },
+    { name: 'Christina', role: 'Front end (React)' },
+    { name: 'Christina', role: 'Back end (API + database)' },
+    { name: 'Christina', role: 'AI agent and skills' },
   ],
 
   // The personality of your AI agent. Used in its system prompt.
   agent: {
     name: 'Compass',
-    voice: 'warm, encouraging, and plain-spoken, like a helpful neighbor',
+    voice: 'warm, factual, and plain-spoken, like an educator',
     readingLevel: '6th grade',
   },
 };

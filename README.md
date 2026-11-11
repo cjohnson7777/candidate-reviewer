@@ -13,13 +13,13 @@ It runs on day one with no key and no database (sample data + mock AI), so you c
 
 | | |
 |---|---|
-| **Team name** | TODO |
-| **App name** | TODO |
-| **Problem statement** | TODO: Who is struggling, and how? |
-| **Target user** | TODO: One person, with a name and a situation |
-| **Community** | TODO: City, neighborhood |
-| **Theme** | TODO: Climate / Education Access / Global Health / Clean Water / Child Protection |
-| **How we'll know it works** | TODO: Something measurable |
+| **Team name** |  |
+| **App name** | Candidate reviewer |
+| **Problem statement** | Help voters pick the best candidate for them |
+| **Target user** | Jan who doesn't know the local politicians running nor how to find them |
+| **Community** | Nashville |
+| **Theme** | Education Access |
+| **How we'll know it works** | Can pull up and see Nashville politicians and their views |
 
 | Name | Role |
 |---|---|
