@@ -34,53 +34,51 @@
 ## PART B: Our project (fill this in)
 
 ### 1. Team and one-liner
-- **Team name:** TODO
-- **App name:** TODO
-- **One sentence:** We help TODO (who) TODO (do what) so that TODO (result).
+- **Team name:** Me
+- **App name:** Candidate Reviewer
+- **One sentence:** Help voters find local politicians running and their policies.
 
 ### 2. Problem
-- **Problem statement:** TODO
-- **Theme:** TODO (Climate, Education Access, Global Health, Clean Water, Child Protection, other)
-- **Evidence it's real:** TODO (a number, an article, or a conversation with someone affected)
+- **Problem statement:** Voters in Nashville struggle to find the policies of local politicians because the information is scattered and hard to find.
+- **Theme:** Education Access
+- **Evidence it's real:** Jan, 18, newly able to vote but has no idea where who to vote for.
 
 ### 3. User
-- **Main user:** TODO (name, age, situation)
-- **What they do today without our app:** TODO
-- **Device and language(s):** TODO
+- **Main user:** Jan, 18, newly able to vote but has no idea where who to vote for.
+- **What they do today without our app:** Search multiple news outlets for information
+- **Device and language(s):** PC, JS, HTML
 
 ### 4. Goals
 | Goal | How we'll measure it | Target |
 |---|---|---|
-| TODO | TODO | TODO |
+| See candidates and policies on page | Looking at the page | Candidate and policies on the page |
 
 ### 5. Features
 | Priority | Feature | Ticket | Skill(s) |
 |---|---|---|---|
-| Must | TODO | 004 | TODO |
-| Must | TODO | 005 | TODO |
-| Must | TODO | 006 | TODO |
-| Not now | TODO | n/a | n/a |
+| Must | List of candidates running in Nashville | 004 |  |
+| Must | Policies candidates are running on | 005 |  |
 
 ### 6. Agent and skills
-- **Agent name and voice:** TODO (update `shared/project.config.js` to match)
-- **Starter skills we keep:** TODO
-- **New skills we'll write:** TODO (name, what it does, when it should be used)
-- **The agent must NEVER:** TODO
+- **Agent name and voice:** Compass, warm, factual, and plain-spoken, like an educator
+- **Starter skills we keep:** 
+- **New skills we'll write:** 
+- **The agent must NEVER:** 
 
 ### 7. Data
 | Table | What's in it | Where the data comes from | Who keeps it up to date |
 |---|---|---|---|
-| resources | TODO | TODO | TODO |
-| TODO | TODO | TODO | TODO |
+| resources | Candidates | news outlets |  |
+|  |  |  |  |
 
 ### 8. Privacy and governance
-- **Personal info our app could touch:** TODO
-- **How we protect it:** TODO
-- **What we tell users up front:** TODO
-- **Who on the team is responsible:** TODO
+- **Personal info our app could touch:** 
+- **How we protect it:** 
+- **What we tell users up front:** 
+- **Who on the team is responsible:** 
 
 ### 9. Out of scope (not in these two weeks)
-- TODO
+- 
 
 ### 10. Open questions
-- TODO
+- 
