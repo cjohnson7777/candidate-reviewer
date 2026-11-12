@@ -2,16 +2,14 @@ import { useRef, useState } from 'react';
 import { api } from '../api.js';
 import { project } from '../../shared/project.config.js';
 
-// Chat with your agent. Pick a skill, or leave it on Auto and let intent-router choose.
-export default function ChatPanel({ skills }) {
+export default function ChatPanel() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [skill, setSkill] = useState('auto');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const logRef = useRef(null);
 
-  const choosable = skills.filter((s) => !['safety-guardrail', 'intent-router'].includes(s.name));
+  const skill = 'voter-guide';
 
   async function send(event) {
     event.preventDefault();
@@ -37,24 +35,17 @@ export default function ChatPanel({ skills }) {
     <section className="card chat" aria-labelledby="chat-title">
       <div className="card-head">
         <h2 id="chat-title">Ask {project.agent.name}</h2>
-        <label className="skill-pick">
-          Skill
-          <select value={skill} onChange={(e) => setSkill(e.target.value)}>
-            <option value="auto">Auto (intent-router picks)</option>
-            {choosable.map((s) => (
-              <option key={s.name} value={s.name}>{s.name}</option>
-            ))}
-          </select>
-        </label>
+        <span className="count">voter-guide</span>
       </div>
 
       <ul className="chat-log" ref={logRef} aria-live="polite">
         {messages.length === 0 && (
-          <li className="empty">Try: "Where does the mayor stand on housing?" or "Compare Blackburn and Green on schools."</li>
+          <li className="empty">
+            Try: "Where does the mayor stand on housing?" or "Compare Blackburn and Green on schools."
+          </li>
         )}
         {messages.map((m, i) => (
           <li key={i} className={`bubble ${m.role}`}>
-            {/* React escapes text automatically, so AI output can't inject HTML */}
             <p><RichText text={m.text} /></p>
             {m.meta && (
               <small>
@@ -84,8 +75,6 @@ export default function ChatPanel({ skills }) {
   );
 }
 
-// Shows **bold** from the AI as real bold text. React still escapes everything,
-// so this is safe: we never use dangerouslySetInnerHTML.
 function RichText({ text }) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
     part.startsWith('**') && part.endsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> : part,

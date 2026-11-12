@@ -10,7 +10,7 @@ export default function ProjectHeader({ health }) {
       <div className="hero-inner">
         <div className="hero-main">
           <p className="eyebrow">
-            <Field value={project.teamName} /> · <Field value={project.community} />
+           <Field value={project.community} />
           </p>
           <h1>{project.appName}</h1>
           <p className="tagline">{project.tagline}</p>
