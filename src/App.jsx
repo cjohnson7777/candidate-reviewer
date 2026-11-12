@@ -21,10 +21,10 @@ export default function App() {
       <ProjectHeader health={health} />
       <main className="layout">
         <VoterGuide />
-        <StartHere health={health} />
+        {/* <StartHere health={health} /> */}
         <ChatPanel skills={skills} />
-        <ResourceBoard />
-        <SkillsPanel skills={skills} />
+        {/* <ResourceBoard /> */}
+        {/* <SkillsPanel skills={skills} /> */}
       </main>
       <footer className="footer">
         Summaries come from the linked public sources and can leave things out. This app does not recommend a candidate. AI answers can be wrong. Never share personal information.
