@@ -109,6 +109,10 @@ function mockReply(skillName, toolResult) {
     const top = toolResult.data.slice(0, 2).map((r) => `- ${r.name}: ${r.description} ${r.hours}. ${r.phone}`);
     return `${intro}\nTop database matches:\n${top.join('\n')}`;
   }
+  if (skillName === 'voter-guide' && toolResult?.data?.length) {
+    const names = toolResult.data.map((person) => person.name).join(', ');
+    return `${intro}\nSourced people: ${names}. This is not a recommendation. Read the linked source before you decide.`;
+  }
   return intro;
 }
 

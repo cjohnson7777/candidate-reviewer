@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { CATEGORIES } from './db/seed-data.js';
+import { ISSUE_IDS, OFFICE_IDS } from './db/politicians.js';
 
 // Every request is checked with zod .safeParse() BEFORE we touch the AI or the database.
 // Restaurant analogy: the order ticket must be filled out correctly before the kitchen cooks.
@@ -36,6 +37,12 @@ export const NewResource = z.object({
 export const ResourceQuery = z.object({
   search: z.string().trim().max(100).optional().default(''),
   category: z.union([z.literal(''), z.enum(CATEGORIES)]).optional().default(''),
+});
+
+export const PoliticianQuery = z.object({
+  search: z.string().trim().max(100).optional().default(''),
+  office: z.union([z.literal(''), z.enum(OFFICE_IDS)]).optional().default(''),
+  issue: z.union([z.literal(''), z.enum(ISSUE_IDS)]).optional().default(''),
 });
 
 // Turn zod's error into one friendly sentence.

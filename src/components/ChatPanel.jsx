@@ -50,7 +50,7 @@ export default function ChatPanel({ skills }) {
 
       <ul className="chat-log" ref={logRef} aria-live="polite">
         {messages.length === 0 && (
-          <li className="empty">Try: "Where can my kids get homework help?" or "Explain this notice in plain words."</li>
+          <li className="empty">Try: "Where does the mayor stand on housing?" or "Compare Blackburn and Green on schools."</li>
         )}
         {messages.map((m, i) => (
           <li key={i} className={`bubble ${m.role}`}>
@@ -73,7 +73,7 @@ export default function ChatPanel({ skills }) {
           id="chat-input"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about food, health, youth programs..."
+          placeholder="Ask about a politician or an issue..."
           maxLength={2000}
           autoComplete="off"
         />

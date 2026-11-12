@@ -14,6 +14,7 @@ test('keyword routing picks a sensible skill', async () => {
   assert.equal(routeWithRules('What does this letter mean?', skills).skill, 'plain-language-explainer');
   assert.equal(routeWithRules('What should I do next?', skills).skill, 'action-plan-builder');
   assert.equal(routeWithRules('Where is a food pantry?', skills).skill, 'resource-finder');
+  assert.equal(routeWithRules("Where does Mayor O'Connell stand on housing?", skills).skill, 'voter-guide');
 });
 
 test('resource-finder searches the database before answering', async () => {
@@ -32,6 +33,13 @@ test('crisis messages skip the AI and show emergency numbers', async () => {
   const out = await runAgent({ message: 'I want to end my life' });
   assert.equal(out.skill, 'safety-guardrail');
   assert.match(out.reply, /988/);
+});
+
+test('a policy question uses the voter guide and names the person', async () => {
+  const out = await runAgent({ message: "Where does Freddie O'Connell stand on housing?" });
+  assert.equal(out.skill, 'voter-guide');
+  assert.ok(out.sources.some((source) => source.name === "Freddie O'Connell"));
+  assert.match(out.reply, /not a recommendation/i);
 });
 
 test('ticket 001: a question with no match finds nothing in the database', async () => {

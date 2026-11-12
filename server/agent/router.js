@@ -29,6 +29,7 @@ const RULES = [
   { skill: 'translator', pattern: /\b(translate|translation|in spanish|in english|en español|in polish|in arabic|in chinese)\b/i },
   { skill: 'plain-language-explainer', pattern: /\b(what does .* mean|explain|simplify|plain language|confus\w*|don't understand|letter|notice|form)\b/i },
   { skill: 'action-plan-builder', pattern: /\b(what should i do|where do i start|next steps?|plan|how do i|steps)\b/i },
+  { skill: 'voter-guide', pattern: /\b(vote|voting|voter|candidate|candidates|politician|politicians|policy|policies|mayor|governor|senate|senator|ballot|blackburn|hagerty|bradshaw|o'connell|oconnell)\b/i },
   { skill: 'resource-finder', pattern: /\b(where|find|near|nearby|program|pantry|food|clinic|shelter|tutor|job|camp|class|free)\b/i },
 ];
 

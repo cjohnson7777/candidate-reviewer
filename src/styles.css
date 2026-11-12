@@ -44,6 +44,7 @@ button, input, select, textarea { font: inherit; }
 .card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
 .card-head h2 { font-size: 20px; }
 .count { font-size: 13px; font-weight: 700; color: var(--green); background: #e6f2ec; padding: 3px 10px; border-radius: 999px; }
+.guide { grid-column: 1 / -1; }
 .start-here { grid-column: 1; }
 .chat { grid-column: 2; grid-row: span 2; display: flex; flex-direction: column; min-height: 560px; }
 .resources { grid-column: 1; }
@@ -92,6 +93,34 @@ input:focus, select:focus, textarea:focus { outline: 3px solid rgba(29,107,82,.2
 .resource-list small { color: var(--muted); font-size: 12px; }
 .tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--green-dark); background: #e6f2ec; padding: 2px 8px; border-radius: 999px; }
 
+/* ---------- Voter guide ---------- */
+.guide-lead, .guide-note, .person-summary, .person-detail { margin: 0; }
+.guide-lead { max-width: 70ch; color: var(--ink); }
+.guide-note { margin-top: 14px; font-size: 13px; color: var(--muted); }
+.guide-filters { display: grid; gap: 10px; margin: 14px 0; }
+.office-pick { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--muted); }
+.issue-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: #fff; color: var(--green-dark); border: 1px solid var(--line); padding: 6px 12px; font-weight: 700; }
+.chip:hover { background: #e6f2ec; color: var(--green-dark); }
+.chip.on, .chip.on:hover { background: var(--green); color: #fff; border-color: var(--green); }
+.politician-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+.politician { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fcfbf8; display: flex; flex-direction: column; gap: 6px; }
+.politician-top { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.party, .status { margin: 0; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.party-democrat { color: #1d4e89; }
+.party-republican { color: #8c2f2f; }
+.status { color: var(--green-dark); background: #e6f2ec; padding: 2px 8px; border-radius: 999px; }
+.politician h3 { font-size: 22px; }
+.office-line { margin: 0; font-weight: 700; }
+.person-summary { font-size: 15px; }
+.person-detail { font-size: 13px; color: var(--muted); }
+.positions { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 10px; }
+.positions li { border-top: 1px solid var(--line); padding-top: 8px; }
+.positions h4 { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--green-dark); margin-bottom: 4px; }
+.positions p { margin: 0 0 4px; font-size: 14px; }
+.positions a, .profile-link { font-size: 13px; font-weight: 700; color: var(--green-dark); }
+.profile-link { margin-top: auto; padding-top: 8px; }
+
 /* ---------- Skills ---------- */
 .skill-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .skill-grid li { border: 1px solid var(--line); border-radius: 10px; padding: 12px; background: #fcfbf8; }
@@ -105,7 +134,7 @@ input:focus, select:focus, textarea:focus { outline: 3px solid rgba(29,107,82,.2
 /* ---------- Phones ---------- */
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; }
-  .start-here, .chat, .resources, .skills { grid-column: 1; grid-row: auto; }
+  .guide, .start-here, .chat, .resources, .skills { grid-column: 1; grid-row: auto; }
   .chat { min-height: 460px; }
   .filters { grid-template-columns: 1fr; }
   .add-form { grid-template-columns: 1fr; }

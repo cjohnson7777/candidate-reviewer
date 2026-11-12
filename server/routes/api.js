@@ -2,11 +2,12 @@ import { Router } from 'express';
 import { aiMode, config } from '../config.js';
 import { hasDatabase } from '../db/pool.js';
 import { CATEGORIES } from '../db/seed-data.js';
+import { ISSUES, OFFICES, UPDATED, listPoliticians } from '../db/politicians.js';
 import { addResource, listResources } from '../db/resources.js';
 import { runAgent } from '../agent/agent.js';
 import { loadSkills } from '../agent/skills.js';
 import { friendlyAiError } from '../ai/model.js';
-import { ChatRequest, NewResource, ResourceQuery, firstError } from '../validation.js';
+import { ChatRequest, NewResource, PoliticianQuery, ResourceQuery, firstError } from '../validation.js';
 
 // Restaurant analogy: the waiter's routes. Every path here starts with /api.
 export const api = Router();
@@ -37,6 +38,21 @@ api.post('/chat', async (req, res) => {
     console.error('[chat]', err);
     res.status(502).json({ error: friendlyAiError(err) });
   }
+});
+
+// GET /api/politicians?office=governor&issue=housing&search=
+api.get('/politicians', (req, res) => {
+  const parsed = PoliticianQuery.safeParse(req.query);
+  if (!parsed.success) {
+    res.status(400).json({ error: firstError(parsed) });
+    return;
+  }
+  res.json({
+    updated: UPDATED,
+    issues: ISSUES,
+    offices: OFFICES,
+    politicians: listPoliticians(parsed.data),
+  });
 });
 
 // GET /api/resources?search=food&category=Food
